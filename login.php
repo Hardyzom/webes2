@@ -82,15 +82,18 @@ foreach(explode("\n", $passwords) as $line)
 }
 
 if ($validUser == false){
-    header("Location: index.php?response=Invalid user!");
+    header("Location: index.php?response=Hibás email cím!");
+    exit;
 }
 else if ($correctPassword == false){
-    header("Location: index.php?response=Invalid password!&redirect=police.hu&delay=3");
+    header("Refresh: 3; url=police.hu");
+    echo "Hibás jelszó! Az átirányítás 3 másodperc múlva megtörténik.";
+        exit;
 
 }else{
     $color = Get_Color($LogInUser);
-    header("Location: index.php?response=We are glad to have you here again!&color=$color&email=$LogInUser");
-
+    header("Location: index.php?response=Üdv újra!&color=$color&email=$LogInUser");
+exit;
 }
 
 ?>
