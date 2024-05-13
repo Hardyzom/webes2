@@ -123,7 +123,7 @@ p {
 <body>
     <div id="everything">
     <div id="info-container" class="container">
-    <?php if (isset($_GET["color"]) && isset($_GET["response"]) && $_GET["response"] == "We are glad to have you here again!") : ?>
+    <?php if (isset($_GET["color"]) && isset($_GET["response"]) && $_GET["response"] == "Üdv újra!") : ?>
         <h1>Welcome, <span style="font-size: smaller;"><?= htmlspecialchars($_GET["email"]); ?>!</span></h1>
     <?php else : ?>
         <h1>Login</h1>
@@ -135,21 +135,21 @@ p {
             if(isset($_GET["response"])) {
                 echo "<p>{$_GET["response"]}</p>";
             } else {
-                echo "<p>Please log in to access the content.</p>";
+                echo "<p>Kérjük, jelentkezzen be a tartalom eléréséhez.</p>";
             }
             ?>
         </div>
 
         <div id="login-container" class="container">
-            <?php if (isset($_GET["color"]) && isset($_GET["response"]) && $_GET["response"] == "We are glad to have you here again!") : ?>
+            <?php if (isset($_GET["color"]) && isset($_GET["response"]) && $_GET["response"] == "<p>Üdv újra!</p>") : ?>
                 <form action="logout.php" method="post">
                     <input type="submit" value="Logout">
                 </form>
             <?php else : ?>
                 <form action="login.php" method="post">
-                    <input type="text" name="user" placeholder="Enter your email"><br>
-                    <input type="password" name="password" placeholder="Enter your password"><br>
-                    <input type="submit" value="Login">
+                    <input type="text" name="user" placeholder="Email cím"><br>
+                    <input type="password" name="password" placeholder="Jelszó"><br>
+                    <input type="submit" value="Bejelentkezés">
                 </form>
             <?php endif; ?>
         </div>
