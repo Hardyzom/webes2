@@ -11,121 +11,113 @@ if (isset($_GET["redirect"]) && isset($_GET["delay"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
+        
         body {
-            background-color: <?= isset($_GET["color"]) ? $_GET["color"] : "#2076aa" ?>;
-            color: #333;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            height: 100vh;
-        }
+    background-color: #2076aa;
+    color: #333;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 
-        #everything {
-            width: 80%;
-            max-width: 400px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+#everything {
+    width: 90%;
+    max-width: 480px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
 
-        .container {
-            padding: 20px;
-        }
+.container {
+    padding: 40px;
+}
 
-        #info-container {
-            background-color: #3498db;
-            color: #fff;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-        }
+#info-container {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    border-radius: 16px 16px 0 0;
+}
 
-        #info-container h1 {
-            margin: 10px 0;
-            font-size: 36px;
-            letter-spacing: 1px; /* Betűköz növelése */
-        }
+#info-container h1 {
+    margin: 20px 0;
+    font-size: 36px;
+}
 
-        #info-container p {
-            margin: 5px 0;
-            font-size: 16px;
-        }
+#info-container p {
+    margin: 10px 0;
+    font-size: 18px;
+}
 
-        #response-container,
-        #login-container {
-            background-color: #fff;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-            border-radius: 0;
-        }
+#response-container,
+#login-container {
+    background-color: #ffffff;
+    text-align: center;
+}
 
-        #login-container {
-            border-radius: 0 0 8px 8px;
-        }
+#login-container {
+    border-radius: 0 0 16px 16px;
+}
 
-        #login-container h1 {
-            margin: 20px 0;
-            font-size: 28px;
-            letter-spacing: 1px; /* Betűköz növelése */
-        }
+#login-container h1 {
+    margin: 30px 0;
+    font-size: 32px;
+}
 
-        #login-container p {
-            margin: 10px 0;
-            font-size: 14px;
-        }
+input[type=text],
+input[type=password],
+input[type=submit] {
+    width: calc(100% - 24px);
+    margin: 16px 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 14px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
 
-        input[type=text],
-        input[type=password],
-        input[type=submit] {
-            width: calc(100% - 24px);
-            margin: 8px 0;
-            box-sizing: border-box;
-            border-radius: 4px;
-            background-color: #f8f8f8;
-            color: #333;
-            padding: 12px;
-            border: 1px solid #ccc;
-            letter-spacing: 1px; /* Betűköz növelése */
-        }
+input[type=submit] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        input[type=submit] {
-            background-color: #3498db;
-            color: #fff;
-            padding: 14px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+input[type=submit]:hover {
+    background-color: #45a049;
+}
 
-        input[type=submit]:hover {
-            background-color: #2181b5;
-        }
+form {
+    width: 100%;
+}
 
-        form {
-            width: 100%;
-        }
+#footer {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 0 16px 16px;
+    margin-top: 20px;
+}
 
-        #footer {
-            background-color: #3498db;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-radius: 0 0 8px 8px;
-            margin-top: 20px;
-        }
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: 28px;
+}
 
-        h1, h2, h3, h4, h5, h6 {
-            margin: 0;
-            font-size: 24px;
-        }
+p {
+    margin: 10px 0;
+    font-size: 16px;
+}
 
-        p {
-            margin: 5px 0; /* Kisebb margó a láblécben */
-            font-size: 14px;
-        }
+    
     </style>
 </head>
 <body>
